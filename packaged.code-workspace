@@ -1,0 +1,86 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.editor.revealIfOpen": true,
+		"files.trimTrailingWhitespace": true,
+		"files.trimFinalNewlines": true,
+		"editor.defaultFormatter": "redhat.java",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.detectIndentation": true,
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true,
+		"editor.renderWhitespace": "all",
+		"editor.wordWrap": "off",
+		"editor.wordWrapColumn": 80,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true,
+			"source.fixAll": true
+		},
+		"xml.codeLens.enabled": true,
+		"xml.format.spaceBeforeEmptyCloseTag": false,
+		"xml.format.enforceQuoteStyle": "preferred",
+		"xml.format.maxLineWidth": 0,
+		"java.import.generatesMetadataFilesAtProjectRoot": true,
+		"java.showBuildStatusOnStart.enabled": "notification",
+		"java.saveActions.organizeImports": true,
+		"java.cleanup.actionsOnSave": [
+			"addDeprecated",
+			"addFinalModifier",
+			"addOverride",
+			"instanceofPatternMatch",
+			"invertEquals",
+			"lambdaExpression",
+			"qualifyMembers",
+			"qualifyStaticMembers",
+			"stringConcatToTextBlock",
+			"switchExpression",
+			"tryWithResource"
+		],
+		"java.referencesCodeLens.enabled": true,
+		"java.implementationsCodeLens.enabled": true,
+		"java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+		"java.compile.nullAnalysis.mode": "disabled",
+		"java.completion.guessMethodArguments": true,
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.configuration.maven.notCoveredPluginExecutionSeverity": "ignore",
+		"java.maven.downloadSources": true,
+		"maven.view": "hierarchical",
+		"maven.executable.preferMavenWrapper": true,
+		"maven.terminal.useJavaHome": true,
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"[xml]": {
+			"editor.defaultFormatter": "redhat.vscode-xml"
+		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Application",
+				"type": "java",
+				"request": "launch",
+				"cwd": "${workspaceFolder}",
+				"projectName": "packaged",
+				"mainClass": "name.ulbricht.packaged/name.ulbricht.packaged.Main"
+			}
+		],
+		"compounds": []
+	},
+	"extensions": {
+		"recommendations": [
+			"vscjava.vscode-java-pack",
+			"redhat.vscode-xml"
+		]
+	}
+}
