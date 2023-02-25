@@ -17,6 +17,7 @@ SET MAIN_MODULE=name.ulbricht.packaged
 SET MODULE_PATH=target\module
 SET RELEASE_PATH=target\release
 SET LICENSE_FILE=install\license.txt
+SET ICON_FILE=install\application.ico
 
 REM Create the application image (for a Windows console application).
 
@@ -28,6 +29,7 @@ CALL "%JAVA_HOME%\bin\jpackage"^
  --app-version %APP_VERSION%^
  --vendor "%APP_VENDOR%"^
  --copyright "%APP_COPYRIGHT%"^
+ --icon %ICON_FILE%^
  --dest %RELEASE_PATH%^
  --module-path %MODULE_PATH%^
  --module %MAIN_MODULE%
@@ -39,6 +41,7 @@ ECHO Creating application package...
 CALL "%JAVA_HOME%\bin\jpackage"^
  --type msi^
  --app-version %APP_VERSION%^
+ --vendor "%APP_VENDOR%"^
  --dest %RELEASE_PATH%^
  --app-image %RELEASE_PATH%\%APP_NAME%^
  --install-dir "%APP_VENDOR%\%APP_NAME%"^
