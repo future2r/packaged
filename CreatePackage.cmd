@@ -17,7 +17,9 @@ SET MAIN_MODULE=name.ulbricht.packaged
 SET MODULE_PATH=target\module
 SET RELEASE_PATH=target\release
 SET LICENSE_FILE=install\license.txt
-SET ICON_FILE=install\application.ico
+SET ICON_FILE=install\windows\application.ico
+SET RESOURCE_PATH=install\windows\wix
+SET TEMP_PATH=target\release\temp
 
 REM Create the application image (for a Windows console application).
 
@@ -31,23 +33,25 @@ CALL "%JAVA_HOME%\bin\jpackage"^
  --copyright "%APP_COPYRIGHT%"^
  --icon %ICON_FILE%^
  --dest %RELEASE_PATH%^
+ --temp %TEMP_PATH%^
  --module-path %MODULE_PATH%^
  --module %MAIN_MODULE%
 
  REM Create an application package from the pre-built application image
- REM This requires WiX 3.0 or later from https://wixtoolset.org in the PATH
 
 ECHO Creating application package...
 CALL "%JAVA_HOME%\bin\jpackage"^
- --type msi^
+ --type exe^
  --app-version %APP_VERSION%^
  --vendor "%APP_VENDOR%"^
  --dest %RELEASE_PATH%^
+ --temp %TEMP_PATH%^
  --app-image %RELEASE_PATH%\%APP_NAME%^
  --install-dir "%APP_VENDOR%\%APP_NAME%"^
  --license-file %LICENSE_FILE%^
+ --resource-dir %RESOURCE_PATH%^
  --win-dir-chooser^
  --win-menu^
  --win-menu-group %APP_NAME%^
  --win-shortcut^
- --win-shortcut-prompt^
+ --win-shortcut-prompt
